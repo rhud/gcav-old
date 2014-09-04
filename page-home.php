@@ -47,7 +47,7 @@ Template Name: Home Page
 			if( $my_query->have_posts() ) {
 			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			    <div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-			    	<?= types_render_field("icon", array("raw"=>"true"))?>
+			    	<?= types_render_field("icon", array("output"=>"html"))?>
 			    	<h3><?php the_title(); ?></h3>
 			    </div>
 			    <?php
