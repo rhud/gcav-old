@@ -6,26 +6,25 @@ Template Name: Home Page
 
 <div class="wrap hero" role="document">
 	<div id="slider" class="main" data-stellar-ratio="0.3">
-		<div class="slide">
-			<img class="bg" src="/assets/img/hero/theater.room.jpg" />
-			<div class="element el1 from-right"><h2><span>imagine if...</span></h2></div>
-			<div class="element el2 from-left"><h2><span>you could transform your wall into</span> <br/><span>eye-popping 3D entertainment.</span></h2></div>
-		</div>
-		<div class="slide">
-			<img class="bg" src="/assets/img/hero/boardroom.jpg" />
-			<div class="element el1 from-right"><h2><span>imagine if...</span></h2></div>
-			<div class="element el2 from-left"><h2><span>you could revolutionise your business into a</span> <br/><span>truly interactive and powerful enterprise.</span></h2></div>
-		</div>
-		<div class="slide">
-			<img class="bg" src="/assets/img/hero/classroom.jpg" />
-			<div class="element el1 from-right"><h2><span>imagine if...</span></h2></div>
-			<div class="element el2 from-left"><h2><span>you could foster a vibrant and engaging environment,</span> <br/><span>empowering every individual as they Live, Learn & Play.</span></h2></div>
-		</div>
-		<div class="slide">
-			<img class="bg" src="/assets/img/hero/auditorium.jpg" />
-			<div class="element el1 from-right"><h2><span>imagine if...</span></h2></div>
-			<div class="element el2 from-left"><h2><span>you could innovatively connect with audiences and offer</span> <br/><span>endless possibilities for event planning.</span></h2></div>
-		</div>
+		<?php
+		$type = 'solutions';
+		$args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => -1, 'caller_get_posts'=> 1);
+		$my_query = null;
+		$my_query = new WP_Query($args);
+		if( $my_query->have_posts() ) {
+		  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+		    <div class="slide">
+		    	<img class="bg" src="<?=types_render_field("hero-img")?>" />
+		    	<div class="element el1 from-right"><h2><span>imagine if...</span></h2></div>
+		    	<div class="element el2 from-left"><h2><span><?=types_render_field("hero-msg", array("separator"=>"</span> <br/><span>"))?></span></h2></div>
+		    </div>
+		    
+		   	<?php
+		  endwhile;
+		}
+		wp_reset_query();  // Restore global post data stomped by the_post().
+		?>
+		
 	</div>
 </div>
 
@@ -39,55 +38,24 @@ Template Name: Home Page
 				<h3>Gold Class Audio Visial offer an extensive range of services including...<br>
 					Everything we offer lives up to our name.</h3>
 			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/automation.png">
-				<h3>Automation</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/antenna.png">
-				<h3>MATV & Antenna’s</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/hometheatre.png">
-				<h3>Home Theatre</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/security.png">
-				<h3>CCTV & Security</h3>
-				
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/phone.png">
-				<h3>Phone & Data</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/multiroom.png">
-				<h3>Multi-Room Audio</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/design.png">
-				<h3>AV Design</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/install.png">
-				<h3>AV Installation</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/interactive.png">
-				<h3>Interactive Projectors</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/videoconf.png">
-				<h3>Video Conferencing</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/tv.png">
-				<h3>TV & Digital Displays</h3>
-			</div>
-			<div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-				<img src="/assets/img/services/nursecall.png">
-				<h3>Nurse Call Systems</h3>
-			</div>
+			
+			<?php
+			$type = 'services';
+			$args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => -1, 'caller_get_posts'=> 1, 'order' => 'ASC');
+			$my_query = null;
+			$my_query = new WP_Query($args);
+			if( $my_query->have_posts() ) {
+			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+			    <div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
+			    	<?= types_render_field("icon")?>
+			    	<h3><?php the_title(); ?></h3>
+			    </div>
+			    <?php
+			  endwhile;
+			}
+			wp_reset_query();  // Restore global post data stomped by the_post().
+			?>
+			
 			<div class="clearfix"></div>
 			<h2><a href="/services">View All Services</a></h2>
 		</div>
@@ -95,53 +63,44 @@ Template Name: Home Page
 	<section class="solutions">
 		<div class="inner">
 			<h1>Solutions</h1>
-			<div class="col-md-6 col-sm-6 col-lg-3">
-				<div class="solution">
-					<img src="/assets/img/solution.boardroom.jpg"/>
-					<div class="desc">
-						<h2>Corporate</h2>
-						<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis.</p>
-						<a href="#" class="btn btn-primary" role="button">Read More</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6 col-lg-3">
-				<div class="solution">
-					<img src="/assets/img/solution.education.jpg"/>
-					<div class="desc">
-						<h2>Health &amp; Education</h2>
-						<p>Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-						<a href="#" class="btn btn-primary" role="button">Read More</a>	
-					</div>
-				</div>
-			</div>
-			<div class="clearfix visible-md visible-sm"></div>
-			<div class="col-md-6 col-sm-6 col-lg-3">
-				<div class="solution">
-					<img src="/assets/img/solution.home.jpg"/>
-					<div class="desc">
-						<h2>Residential</h2>
-						<p>Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>	
-						<a href="#" class="btn btn-primary" role="button">Read More</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6 col-lg-3">
-				<div class="solution">
-					<img src="/assets/img/solution.cinema.jpg"/>
-					<div class="desc">
-						<h2>Theatre &amp; Auditoriums</h2>
-						<p>Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-						<a href="#" class="btn btn-primary" role="button">Read More</a>	
-					</div>
-				</div>
-			</div>
+			
+			<?php
+			$type = 'solutions';
+			$args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => -1, 'caller_get_posts'=> 1);
+			$my_query = null;
+			$my_query = new WP_Query($args);
+			$count = 1;
+			if( $my_query->have_posts() ) {
+			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+			    <div class="col-md-6 col-sm-6 col-lg-3">
+			    	<div class="solution">
+			    		<img src="<?=types_render_field("solution-img")?>"/>
+			    		<div class="desc">
+			    			<h2><?php the_title(); ?></h2>
+			    			<p><?php the_excerpt(); ?> </p>
+			    			<a href="<?php the_permalink(); ?>" class="btn btn-primary" role="button">Read More</a>
+			    		</div>
+			    	</div>
+			   	</div>
+			   	<?php
+			   	if($count == 2) {
+			   		?>
+			   		<div class="clearfix visible-md visible-sm"></div>
+			   	<?php
+			   	}
+			   	$count++;
+			    	
+			  endwhile;
+			}
+			wp_reset_query();  // Restore global post data stomped by the_post().
+			?>
+			
 			<div class="clearfix"></div>
 		</div>
 	</section>
 	
 	<section class="brands" data-stellar-background-ratio="0.3" data-stellar-vertical-offset="0">
-		<div class="container">
+		<div class="inner">
 			<h1>Brands</h1>
 			<h3>We only deal with products that we believe are quality and value for money.<br/>
 			I really am simply making up text here. You guys can come up with something.</h3>
@@ -166,8 +125,21 @@ Template Name: Home Page
 	</section>
 		
 	<section class="contact">
-		<div class="container">
+		<div class="inner">
 			<h1>Contact Us</h1>
+			<div class="col-sm-4 details">
+				<p>07 4630 4433 <i class="icon-phone"></i></p>
+				<p><a href="mailto:info@goldclassav.com.au">info@goldclassav.com.au</a> <i class="icon-mail"></i></p>
+				<p>PO Box 18259 <i class="icon-location"></i></p>
+				<p>Clifford Gardens <i class="icon-location dark"></i></p>
+				<p>Toowoomba QLD 4350 <i class="icon-location dark"></i></p>
+				
+			</div>
+			<div class="col-sm-7 form">
+				<?php echo do_shortcode("[contact-form-7 id='4' title='Home Contact']"); ?>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="clearfix"></div>
 		</div>
 	</section>
 	
