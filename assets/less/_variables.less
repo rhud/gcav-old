@@ -1,0 +1,77 @@
+// Brand colors
+// -------------------------
+
+@brand-primary:         #fdbe19;
+@gold:					#fdbe19;
+@yellow:				#fee127;
+@grey:					#191919;
+
+// Glyphicons path
+// -------------------------
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("http://hello.myfonts.net/count/2b3466");
+
+
+@icon-font-path:        "../vendor/bootstrap/fonts/";
+
+.proxima {
+	font-family: "proxima-nova", helvetica, arial, sans-serif;
+	font-weight: 100;
+}
+
+body {
+	.proxima;
+}
+
+
+  
+@font-face {font-family: 'Ample-Bold';src: url('../fonts/2B3466_0_0.eot');src: url('../fonts/2B3466_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2B3466_0_0.woff') format('woff'),url('../fonts/2B3466_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Ample-Regular';src: url('../fonts/2B3466_1_0.eot');src: url('../fonts/2B3466_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2B3466_1_0.woff') format('woff'),url('../fonts/2B3466_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Ample-Light';src: url('../fonts/2B3466_2_0.eot');src: url('../fonts/2B3466_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/2B3466_2_0.woff') format('woff'),url('../fonts/2B3466_2_0.ttf') format('truetype');}
+ 
+.Ample-Bold { 
+	font-family: Ample-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.Ample-Regular { 
+	font-family: Ample-Regular;
+	font-weight: normal;
+	font-style: normal;
+}
+.Ample-Light { 
+	font-family: Ample-Light;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1 {
+	.Ample-Bold;
+	text-transform: uppercase;
+	font-size: 40px;
+}
+
+h2 {
+	.Ample-Light;
+}
+
+h3 {
+	font-weight: 100;
+}
+
+a {
+	color: @gold;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	
+	&:hover {
+		text-decoration: none;
+		color: @yellow;
+	}
+}

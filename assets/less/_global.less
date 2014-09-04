@@ -1,0 +1,52 @@
+html, body {
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.nav {
+	li {
+		&:hover, &:focus {
+			background: none !important;
+		}
+		a {
+			.Ample-Regular;
+			text-transform: uppercase;
+			font-size: 16px;
+			line-height: 16px;
+			color: white;
+			border: 1px solid transparent;
+			padding: 7px 7px 5px;
+			margin: 10px 5px 0px;
+			
+			&:hover {
+				color: @gold;
+				background: none;
+			}
+		}
+		&.active {
+			a {
+				color: @gold;
+				border-color: @gold;
+				&:hover {
+					color: @yellow;
+					border-color: @yellow;
+				}
+			}
+		}
+	}
+	
+}
+
+// REVEAL TEMPLATE
+div.rt {
+	position: fixed;
+	background: white;
+	top: 10px;
+	right: 10px;
+	padding: 10px;
+	color: black;
+	z-index: 1000;
+}

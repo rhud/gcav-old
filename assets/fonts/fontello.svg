@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="location" unicode="&#xe800;" d="m0 350q0 207 147 354t353 146 354-146 146-354-146-354-354-146-353 146-147 354z m250 82q0-82 35-129l215-283 215 283q35 47 35 129 0 104-73 176t-177 72-177-72-73-176z m145-1q0 44 31 74t74 31 74-31 31-74-31-74-74-30-74 30-31 74z" horiz-adv-x="1000" />
+<glyph glyph-name="facebook" unicode="&#xe802;" d="m0 350q0 95 37 182t100 149 150 100 182 37 182-37 149-100 100-149 37-182-37-182-100-150-149-100-182-37-182 37-150 100-100 150-37 182z m351 0h52v-253h105v253h70l9 87h-79v44q0 20 6 27t29 8h43v87h-70q-61 0-87-29t-26-85v-52h-52v-87z" horiz-adv-x="937.5" />
+<glyph glyph-name="phone" unicode="&#xe803;" d="m0 350q0 207 147 354t353 146 354-146 146-354-146-354-354-146-353 146-147 354z m199 162q-4-51 41-142 71-133 229-248 107-71 193-73 29 0 47 16l84 86q10 10 8 23t-16 24l-123 72q-19 12-45-6l-35-37q-6-6-18-2-11 2-24 8t-25 16-21 16-21 21-20 17q-64 61-80 119 0 4 4 10l31 31q18 18 8 43l-68 129q-12 18-28 16-9 0-19-8l-84-86q-18-16-18-45z" horiz-adv-x="1000" />
+<glyph glyph-name="mail" unicode="&#xe804;" d="m0 350q0 207 147 354t353 146 354-146 146-354-146-354-354-146-353 146-147 354z m244-193l512 0-166 174-90-51-90 51z m0 58l131 137-131 74 0-211z m0 256l256-144 256 144 0 72-512 0 0-72z m381-119l131-137 0 211z" horiz-adv-x="1000" />
+<glyph glyph-name="menu" unicode="&#xe805;" d="m0 29v71q0 15 11 25t25 11h785q15 0 26-11t10-25v-71q0-15-10-26t-26-10h-785q-15 0-25 10t-11 26z m0 285v72q0 14 11 25t25 10h785q15 0 26-10t10-25v-72q0-14-10-25t-26-10h-785q-15 0-25 10t-11 25z m0 286v71q0 15 11 26t25 10h785q15 0 26-10t10-26v-71q0-15-10-25t-26-11h-785q-15 0-25 11t-11 25z" horiz-adv-x="857.1" />
+</font>
+</defs>
+</svg>

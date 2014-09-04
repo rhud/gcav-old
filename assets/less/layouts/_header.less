@@ -1,0 +1,180 @@
+.menu-link {
+	display: none;
+}
+
+.navbar-nav {
+	margin: 0;
+}
+
+.navbar-brand {
+	background: url(../img/gcav.logo.png) left center;
+	background-size: 250px 60px;
+	width: 250px;
+	height: 60px;
+	position: relative;
+	visibility: visible;
+	display: block;
+	opacity: 1;
+	&.mini {
+		position: absolute;
+		width: 60px;
+		opacity: 1;
+		top: 20px;
+	}
+}
+
+header.smartheader {
+	position: fixed !important;
+	width: 100%;
+	top: 0px;
+	background: rgba(0, 0, 0, 0.75); 
+	
+	.container {
+		width: 100%;
+		padding: 20px 40px;	
+		-webkit-transition: all 00.4s;
+		-moz-transition: all 00.4s;
+		transition: all 00.4s;
+		
+		.navbar-brand {
+			-webkit-transition: all 00.4s;
+			-moz-transition: all 00.4s;
+			transition: all 00.4s;
+		}
+	}	
+	
+	&.shrink {
+		
+		.container {
+			padding: 10px 40px;
+			.navbar-brand {
+				width: 150px;
+				height: 36px;
+				background-size: 150px 36px;
+				margin: 0px 0px !important;
+				top: 0px;
+				opacity: 0;
+				-webkit-transition: all 00.4s;
+				-moz-transition: all 00.4s;
+				transition: all 00.4s;
+				&.mini {
+					width: 35px;
+					opacity: 1;
+					top: 10px;
+				}
+			}	
+		}
+	}	
+}
+
+nav.smartheader {
+	width: 60%;
+	position: fixed;
+	top: 25px;
+	right: 0px;
+	z-index: 1001;
+	-webkit-transition: all 00.4s;
+	-moz-transition: all 00.4s;
+	transition: all 00.4s;
+	
+	ul.navbar-nav {
+		float: right;
+		margin-right: 30px;
+		li {
+			a {
+				border-radius: 3px;
+			}
+		}
+	}
+	
+	&.shrink {
+		position: fixed;
+		top: 5px;
+		
+		ul.navbar-nav {
+			top: 0px;
+			li a {
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	nav.smartheader {
+		position: fixed;
+		display: block;
+		visibility: visible;
+		top: 0;
+		bottom: 0;
+		width: 13.755em;
+		right: -13.755em;
+		height: 100%;
+		padding-top: 60px;
+		background: black;
+		-webkit-transform: translate(0px, 0px);
+		-moz-transform: translate(0px, 0px);
+		-o-transform: translate(0px, 0px);
+		-ms-transform: translate(0px, 0px);
+		transform: translate(0px, 0px);
+		-webkit-transition: 0.15s ease;
+		-moz-transition: 0.15s ease;
+		-o-transition: 0.15s ease;
+		transition: 0.15s ease;
+		
+		ul.navbar-nav {
+			float: none;
+			margin-right: 0px;
+		}
+		
+		&.nav-active {
+			-webkit-transform: translate(-13.755em, 0px);
+			-moz-transform: translate(-13.755em, 0px);
+			-o-transform: translate(-13.755em, 0px);
+			-ms-transform: translate(-13.755em, 0px);
+			transform: translate(-13.755em, 0px);
+		}
+	}
+	
+	.wrap {
+		-webkit-transform: translate(0px, 0px);
+		-moz-transform: translate(0px, 0px);
+		-o-transform: translate(0px, 0px);
+		-ms-transform: translate(0px, 0px);
+		transform: translate(0px, 0px);
+		-webkit-transition: 0.15s ease;
+		-moz-transition: 0.15s ease;
+		-o-transition: 0.15s ease;
+		transition: 0.15s ease;  
+		
+		&.nav-active {
+			-webkit-transform: translate(-13.725em, 0px);
+			-moz-transform: translate(-13.725em, 0px);
+			-o-transform: translate(-13.725em, 0px);
+			-ms-transform: translate(-13.725em, 0px);
+			transform: translate(-13.725em, 0px);
+		}
+	}
+	
+	.menu-link {
+		display: block;
+		position: fixed;
+		top: 30px;
+		left: -60px;
+		z-index: 100;
+		padding: 0px;
+		-webkit-transition: all 00.4s;
+		-moz-transition: all 00.4s;
+		transition: all 00.4s;
+		i {
+			font-size: 30px;
+			cursor: pointer;
+		}
+	}	
+	.shrink {
+		.menu-link {
+			top: 5px;
+			i {
+				
+			}
+		}
+	}
+}
