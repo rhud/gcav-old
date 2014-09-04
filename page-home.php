@@ -14,7 +14,7 @@ Template Name: Home Page
 		if( $my_query->have_posts() ) {
 		  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 		    <div class="slide">
-		    	<img class="bg" src="<?=types_render_field("hero-img")?>" />
+		    	<img class="bg" src="<?=types_render_field("hero-img", array("raw"=>"true"))?>" />
 		    	<div class="element el1 from-right"><h2><span>imagine if...</span></h2></div>
 		    	<div class="element el2 from-left"><h2><span><?=types_render_field("hero-msg", array("separator"=>"</span> <br/><span>"))?></span></h2></div>
 		    </div>
@@ -47,7 +47,7 @@ Template Name: Home Page
 			if( $my_query->have_posts() ) {
 			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			    <div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-			    	<?= types_render_field("icon")?>
+			    	<?= types_render_field("icon", array("raw"=>"true"))?>
 			    	<h3><?php the_title(); ?></h3>
 			    </div>
 			    <?php
@@ -74,7 +74,7 @@ Template Name: Home Page
 			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			    <div class="col-md-6 col-sm-6 col-lg-3">
 			    	<div class="solution">
-			    		<img src="<?=types_render_field("solution-img")?>"/>
+			    		<img src="<?=types_render_field("solution-img", array("raw"=>"true"))?>"/>
 			    		<div class="desc">
 			    			<h2><?php the_title(); ?></h2>
 			    			<p><?php the_excerpt(); ?> </p>
