@@ -7,7 +7,7 @@
 }
 
 .navbar-brand {
-	background: url(../img/gcav.logo.png) left center;
+	background: url(/assets/img/gcav.logo.png) left center;
 	background-size: 250px 60px;
 	width: 250px;
 	height: 60px;
@@ -83,6 +83,17 @@ nav.smartheader {
 		li {
 			a {
 				border-radius: 3px;
+				&:focus {
+					background: none;
+				}
+			}
+			&.open {
+				a {
+					background: none;
+				}
+			}
+			ul {
+				background: rgba(0, 0, 0, .75);
 			}
 		}
 	}

@@ -48,9 +48,11 @@
 					display: inline-block;
 					line-height: 25px;
 					span {
-						background: rgba(255, 255, 255, .90);
+						background: rgba(0, 0, 0, .50);
 						padding: 3px 5px;
-						box-shadow: 1px 1px 5px #666;
+						border-radius: 4px;
+						//box-shadow: 1px 1px 5px #666;
+						color: white;
 						.proxima;
 					}
 				}
@@ -76,7 +78,7 @@
 	bottom: 20px;
 	left: 50%;
 	margin-left: -15px;
-	margin-top: -30px;
+	margin-top: -35px;
 	width: 30px;
 	height: 30px;
 	background: url(../img/gc.anim.gif);
@@ -155,13 +157,17 @@
 			}
 		}
 		&.solutions {
-			#gradient.vertical(#FAFAFA, #EEEEEE, 0%, 100%);
 			background: #111;
+			.stars;
+			.twinkling {
+				padding: 100px 0px;
+			}
 			h1 {
 				margin: 0px auto 90px;
 			}
 			.inner {
 				background: none;
+				margin: 0px auto;
 			}
 			
 			.solution {
@@ -175,7 +181,7 @@
 				-moz-transition: all 00.4s;
 				transition: all 00.4s;
 				&:hover {
-					background: rgba(50, 50, 50, 1.0);
+					background: rgba(50, 50, 50, 0.75);
 				}
 				img {
 					width: 100%;
@@ -325,7 +331,7 @@
 		top: 0px;
 	}
 	.gcanim {
-		top: 0px;
+		top: -10px;
 		margin-top: -50px;
 		margin-bottom: 20px;
 	}
@@ -397,7 +403,7 @@
 		top: 0px;
 	}
 	.gcanim {
-		top: 0px;
+		
 	}
 	.wrap {
 		section {
@@ -422,10 +428,10 @@
 		
 	}
 	.hero {
-		height: 700px;
+		height: 750px;
 	}
 	#slider {
-		height: 700px !important;
+		height: 750px !important;
 		.slide {
 			img {
 			
@@ -455,10 +461,10 @@
 	}
 	
 	.downdown {
-		top: 0px;
+		
 	}
 	.gcanim {
-		top: 0px;
+		
 	}
 	.wrap {
 		section {

@@ -31,71 +31,45 @@ Template Name: Home Page
 <div class="wrap home-content">
 	<div class="downdown"></div>
 	<div class="gcanim"></div>
-	<section class="services">
-		<div class="inner">
-			<div class="blurb">
-				<h1>Our Services</h1>
-				<h3>Gold Class Audio Visial offer an extensive range of services including...<br>
-					Everything we offer lives up to our name.</h3>
-			</div>
-			
-			<?php
-			$type = 'services';
-			$args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => -1, 'caller_get_posts'=> 1, 'order' => 'ASC');
-			$my_query = null;
-			$my_query = new WP_Query($args);
-			if( $my_query->have_posts() ) {
-			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
-			    <div class="service col-xs-6 col-sm-4 col-md-3 col-lg-2">
-			    	<?= types_render_field("icon", array("output"=>"html"))?>
-			    	<h3><?php the_title(); ?></h3>
-			    </div>
-			    <?php
-			  endwhile;
-			}
-			wp_reset_query();  // Restore global post data stomped by the_post().
-			?>
-			
-			<div class="clearfix"></div>
-			<h2><a href="/services">View All Services</a></h2>
-		</div>
-	</section>
+	
 	<section class="solutions">
-		<div class="inner">
-			<h1>Solutions</h1>
-			
-			<?php
-			$type = 'solutions';
-			$args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => -1, 'caller_get_posts'=> 1);
-			$my_query = null;
-			$my_query = new WP_Query($args);
-			$count = 1;
-			if( $my_query->have_posts() ) {
-			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
-			    <div class="col-md-6 col-sm-6 col-lg-3">
-			    	<div class="solution">
-			    		<img src="<?=types_render_field("solution-img", array("raw"=>"true"))?>"/>
-			    		<div class="desc">
-			    			<h2><?php the_title(); ?></h2>
-			    			<p><?php the_excerpt(); ?> </p>
-			    			<a href="<?php the_permalink(); ?>" class="btn btn-primary" role="button">Read More</a>
-			    		</div>
-			    	</div>
-			   	</div>
-			   	<?php
-			   	if($count == 2) {
-			   		?>
-			   		<div class="clearfix visible-md visible-sm"></div>
-			   	<?php
-			   	}
-			   	$count++;
-			    	
-			  endwhile;
-			}
-			wp_reset_query();  // Restore global post data stomped by the_post().
-			?>
-			
-			<div class="clearfix"></div>
+		<div class="twinkling">
+			<div class="inner">
+				<h1>Solutions</h1>
+				
+				<?php
+				$type = 'solutions';
+				$args = array('post_type' => $type, 'post_status' => 'publish', 'posts_per_page' => -1, 'caller_get_posts'=> 1);
+				$my_query = null;
+				$my_query = new WP_Query($args);
+				$count = 1;
+				if( $my_query->have_posts() ) {
+				  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				    <div class="col-md-6 col-sm-6 col-lg-3">
+				    	<div class="solution">
+				    		<img src="<?=types_render_field("solution-img", array("raw"=>"true"))?>"/>
+				    		<div class="desc">
+				    			<h2><?php the_title(); ?></h2>
+				    			<p><?php the_excerpt(); ?> </p>
+				    			<a href="<?php the_permalink(); ?>" class="btn btn-primary" role="button">Read More</a>
+				    		</div>
+				    	</div>
+				   	</div>
+				   	<?php
+				   	if($count == 2) {
+				   		?>
+				   		<div class="clearfix visible-md visible-sm"></div>
+				   	<?php
+				   	}
+				   	$count++;
+				    	
+				  endwhile;
+				}
+				wp_reset_query();  // Restore global post data stomped by the_post().
+				?>
+				
+				<div class="clearfix"></div>
+			</div>
 		</div>
 	</section>
 	
