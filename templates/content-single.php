@@ -1,7 +1,7 @@
 <div class="wrap container page" role="document">
+	<header><img src="/assets/img/hero/theater.room.jpg"/></header>
 	<div class="inner blog">
 		<div class="content">
-		  <header><img src="/assets/img/hero/theater.room.jpg"/></header>
 		  <main class="main <?php echo roots_main_class(); ?>" role="main">
 		    <?php while (have_posts()) : the_post(); ?>
 		      <?php get_template_part('templates/page', 'header'); ?>
