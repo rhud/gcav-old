@@ -6311,7 +6311,9 @@ button.close {
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
-.modal-footer:after {
+.modal-footer:after,
+.inner:before,
+.inner:after {
   content: " ";
   display: table;
 }
@@ -6329,7 +6331,8 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modal-footer:after,
+.inner:after {
   clear: both;
 }
 .center-block {
@@ -6642,6 +6645,39 @@ a:hover {
   text-decoration: none;
   color: #fee127;
 }
+.inner {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .inner {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .inner {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .inner {
+    width: 1170px;
+  }
+}
+.inner > .navbar-header,
+.inner > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .inner > .navbar-header,
+  .inner > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 html,
 body {
   min-height: 100%;
@@ -6888,6 +6924,55 @@ footer .inner span.logo {
   background: url(/assets/img/gcav.logo.png) top left no-repeat;
   -webkit-background-size: 75px 18px;
           background-size: 75px 18px;
+}
+body {
+  background: #161616;
+}
+.wrap.page {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.wrap.page header {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0px;
+  border-bottom: 5px solid;
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+.wrap.page header img {
+  width: 100%;
+}
+.wrap.page .inner {
+  margin: 100px auto 100px;
+  position: relative;
+}
+.wrap.page .inner.blog:before {
+  right: 28%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -50px;
+  bottom: -100px;
+  width: 10000em;
+  background: #191919;
+  z-index: -1;
+}
+.wrap.page .inner .content {
+  color: #EEE;
+}
+.wrap.page .inner .content h1 {
+  color: #fdbe19;
+}
+.wrap.page .inner .content main {
+  width: 72%;
+  padding-right: 35px;
+}
+.wrap.page .inner .content aside.sidebar {
+  width: 28%;
+  margin-top: 50px;
+  padding-left: 35px;
 }
 .hero {
   height: auto;

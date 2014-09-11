@@ -1,0 +1,52 @@
+body {
+	background: #161616;
+}
+.wrap.page {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	header {
+		height: 300px;
+		width: 100%;
+		overflow: hidden;
+		margin: 0px;
+		border-bottom: 5px solid;
+		border-bottom-color: rgba(255, 255, 255, .25);
+		img {
+			width: 100%;
+		}
+	}
+	.inner {
+		margin: 100px auto 100px;
+		position: relative;
+		&.blog {
+			&:before {
+				right: 28%;
+				content: "";
+				display: block;
+				position: absolute;
+				top: -50px;
+				bottom: -100px;
+				width: 10000em;
+				background: #191919;
+				z-index: -1;
+			}
+		}
+		.content {
+			color: #EEE;
+			h1 {
+				color: @gold;
+			}
+			main {
+				width: 72%;
+				padding-right: 35px;
+			}
+			aside.sidebar {
+				width: 28%;
+				margin-top: 50px;
+				padding-left: 35px;
+			}
+		}
+		
+	}
+}

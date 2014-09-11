@@ -1,15 +1,21 @@
-<?php while (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php the_content(); ?>
-    </div>
-    <footer>
-      <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
-    </footer>
-    <?php comments_template('/templates/comments.php'); ?>
-  </article>
-<?php endwhile; ?>
+<div class="wrap container page" role="document">
+	<div class="inner blog">
+		<div class="content">
+		  <header><img src="/assets/img/hero/theater.room.jpg"/></header>
+		  <main class="main <?php echo roots_main_class(); ?>" role="main">
+		    <?php while (have_posts()) : the_post(); ?>
+		      <?php get_template_part('templates/page', 'header'); ?>
+		      <?php get_template_part('templates/content', 'page'); ?>
+		    <?php endwhile; ?>
+		  </main><!-- /.main -->
+		  <?php if (roots_display_sidebar()) : ?>
+		    <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
+		      <?php include roots_sidebar_path(); ?>
+		    </aside><!-- /.sidebar -->
+		  <?php endif; ?>
+		</div><!-- /.content -->
+	</div>
+</div><!-- /.wrap -->
+
+
+

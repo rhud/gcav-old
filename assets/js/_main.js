@@ -27,6 +27,37 @@ var Roots = {
             $("nav.smartheader").toggleClass("nav-active");
             $(".wrap").toggleClass("nav-active");
       });
+      
+      var docElem = document.documentElement,
+      		smartheader = $(".smartheader"),
+      		didScroll = false,
+      		changeHeaderOn = 200;
+      
+      	function init() {
+      		window.addEventListener( 'scroll', function( event ) {
+      			if( !didScroll ) {
+      				didScroll = true;
+      				setTimeout( scrollPage, 0 );
+      			}
+      		}, false );
+      	}
+      
+      	function scrollPage() {
+      		var sy = scrollY();
+      		if ( sy >= changeHeaderOn ) {
+      			$(".smartheader").addClass("shrink");
+      		}
+      		else {
+      			$(".smartheader").removeClass("shrink");
+      		}
+      		didScroll = false;
+      	}
+      
+      	function scrollY() {
+      		return window.pageYOffset || docElem.scrollTop;
+      	}
+      
+      	init();
     }
   },
   // Home page
@@ -50,36 +81,6 @@ var Roots = {
 			contentAniDelay: 500
 		});
 		
-		var docElem = document.documentElement,
-			smartheader = $(".smartheader"),
-			didScroll = false,
-			changeHeaderOn = 200;
-	
-		function init() {
-			window.addEventListener( 'scroll', function( event ) {
-				if( !didScroll ) {
-					didScroll = true;
-					setTimeout( scrollPage, 0 );
-				}
-			}, false );
-		}
-	
-		function scrollPage() {
-			var sy = scrollY();
-			if ( sy >= changeHeaderOn ) {
-				$(".smartheader").addClass("shrink");
-			}
-			else {
-				$(".smartheader").removeClass("shrink");
-			}
-			didScroll = false;
-		}
-	
-		function scrollY() {
-			return window.pageYOffset || docElem.scrollTop;
-		}
-	
-		init();
     }
   },
   // About us page, note the change from about-us to about_us.
