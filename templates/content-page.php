@@ -15,7 +15,7 @@
 		</div>
 	</header>
 	
-	<div class="inner">
+	<div class="page inner">
 		<main class="main" role="main">
 				<div class="content">
 			  	<?php the_content(); ?>

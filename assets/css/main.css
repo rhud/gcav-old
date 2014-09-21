@@ -6980,20 +6980,30 @@ body {
   line-height: 25px;
   color: #eee;
 }
-.wrap.page .inner {
-  margin: 100px auto;
+.wrap.page .page.inner {
+  margin: 20px auto 100px;
   position: relative;
   padding: 0px;
 }
-.wrap.page .inner main {
+.wrap.page .page.inner main {
   padding: 0px;
   margin: 0px;
 }
-.wrap.page .inner .content {
+.wrap.page .page.inner .content {
   padding: 50px;
   margin: 0px;
   color: #222;
   font-size: 120%;
+}
+.wrap.page .page.inner .content blockquote {
+  padding: 50px;
+  border: none;
+  margin: 0px 0px 50px;
+}
+.wrap.page .page.inner .content blockquote.white {
+  background: white;
+  -webkit-box-shadow: 0px 0px 5px #CCC;
+          box-shadow: 0px 0px 5px #CCC;
 }
 .hero {
   height: auto;
