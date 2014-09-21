@@ -6714,6 +6714,19 @@ ul.nav li.active a:hover {
   color: #fee127;
   border-color: #fee127;
 }
+ul.nav li.active ul.dropdown-menu li a {
+  border: none;
+  color: white;
+}
+ul.nav li.active ul.dropdown-menu li a:hover {
+  color: #fee127;
+}
+ul.nav li.active ul.dropdown-menu li.active a {
+  color: #fdbe19;
+}
+ul.nav li.active ul.dropdown-menu li.active a:hover {
+  color: #fee127;
+}
 div.rt {
   position: fixed;
   background: white;
@@ -6926,7 +6939,7 @@ footer .inner span.logo {
           background-size: 75px 18px;
 }
 body {
-  background: #161616;
+  background: #EEE;
 }
 .wrap.page {
   margin: 0px;
@@ -6934,45 +6947,53 @@ body {
   width: 100%;
 }
 .wrap.page header {
-  height: 300px;
+  height: 500px;
   width: 100%;
   overflow: hidden;
   margin: 0px;
-  border-bottom: 5px solid;
-  border-bottom-color: rgba(255, 255, 255, 0.25);
+  padding: 100px 0px;
+  text-align: center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
-.wrap.page header img {
-  width: 100%;
+.wrap.page header .inner {
+  margin: 0px auto 100px;
+}
+.wrap.page header.about {
+  background-image: url(/assets/img/header.about.jpg);
+}
+.wrap.page header.matv {
+  background-image: url(/assets/img/header.matv.jpg);
+}
+.wrap.page header h1 {
+  color: #fdbe19;
+  padding: 50px 0px 20px;
+  font-family: Ample-Light;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 400%;
+}
+.wrap.page header h3 {
+  font-size: 20px;
+  line-height: 25px;
+  color: #eee;
 }
 .wrap.page .inner {
-  margin: 100px auto 100px;
+  margin: 100px auto;
   position: relative;
+  padding: 0px;
 }
-.wrap.page .inner.blog:before {
-  right: 28%;
-  content: "";
-  display: block;
-  position: absolute;
-  top: -50px;
-  bottom: -100px;
-  width: 10000em;
-  background: #191919;
-  z-index: -1;
+.wrap.page .inner main {
+  padding: 0px;
+  margin: 0px;
 }
 .wrap.page .inner .content {
-  color: #EEE;
-}
-.wrap.page .inner .content h1 {
-  color: #fdbe19;
-}
-.wrap.page .inner .content main {
-  width: 72%;
-  padding-right: 35px;
-}
-.wrap.page .inner .content aside.sidebar {
-  width: 28%;
-  margin-top: 50px;
-  padding-left: 35px;
+  padding: 50px;
+  margin: 0px;
+  color: #222;
+  font-size: 120%;
 }
 .hero {
   height: auto;
@@ -7181,6 +7202,9 @@ body {
 .wrap section.brands {
   height: auto;
   background: url(../img/people.blur.jpg) center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-attachment: fixed;
   padding: 0px;
   text-align: center;
   color: white;

@@ -35,6 +35,23 @@ ul.nav {
 					border-color: @yellow;
 				}
 			}
+			ul.dropdown-menu li  {
+				a {
+					border: none;
+					color: white;
+					&:hover {
+						color: @yellow;
+					}
+				}
+				&.active {
+					a {
+						color: @gold;
+						&:hover {
+							color: @yellow;
+						}
+					}
+				}
+			}
 		}
 	}
 	
